@@ -1,5 +1,6 @@
 import React from 'react';
-import {Image, ScrollView, Text, View} from 'react-native';
+import {Image, ScrollView, Text, View, Button, Platform} from 'react-native';
+import {showLong} from '../../components/AndroidNativeTost';
 import {generateImageUrl} from '../../utils/helpers';
 import {styles} from './style';
 
@@ -11,6 +12,14 @@ const Component = ({data}) => (
         uri: generateImageUrl({size: '300', path: data.backdrop_path}),
       }}
     />
+    {Platform.OS === 'android' && (
+      <Button
+        title="Test android native toast"
+        onPress={() => {
+          showLong('This toast is coming from native level');
+        }}
+      />
+    )}
     <View style={styles.infoContainer}>
       <Text style={styles.title}>{data.title}</Text>
       <Text

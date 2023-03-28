@@ -4,7 +4,8 @@ export const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#f5f5f5',
-    padding: 20,
+    paddingHorizontal: 20,
+    marginVertical: 20,
   },
   poster: {
     width: '100%',
